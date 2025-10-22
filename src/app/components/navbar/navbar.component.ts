@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit{
  }
  setupMenu(){
   this.navItems = [
-    {name: 'Home', url: "/home" },
+    {name: 'Home', url: "/home", icon: "bi bi-house-fill"},
     {name: 'Login', url: "/login",icon: "bi bi-box-arrow-in-right" },
     {name: 'Registration', url: "/registration",icon: "bi bi-person-fill-add" }
   ]
