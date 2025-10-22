@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from "@angular/router";
 import { ApiService } from '../../services/api.service';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,10 @@ import { ApiService } from '../../services/api.service';
 })
 export class LoginComponent {
  constructor(
-  private api: ApiService
+  private api: ApiService,
+  private message : MessageService
  ){}
-  login(){}
+  login(){
+    this.message.show('danger','hiba', "Nem adtál meg minden adatot")
+  }
 }

@@ -1,29 +1,40 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Message } from '../../interface/message';
+import { MessageService } from '../../services/message.service';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-message',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './message.component.html',
   styleUrl: './message.component.scss'
 })
 export class MessageComponent implements OnInit{
-  @Input() severity:string = "info";
-  @Input() title:string = "";
-  @Input() msg:string = "";
-  @Input() icon:string = "";
+  message: Message | null = null
+
+  constructor(private messageService : MessageService){}
+
+   
 
 
   ngOnInit(): void {
-    switch(this.severity){
-      case 'info': this.icon = "bi bi-info-circle-fill"
-      break;
-      case 'danger': this.icon = "bi bi-exclamation-square-fill"
-      break;
-      case 'success': this.icon = "bi bi-check-square-fill"
-      break;
-      case 'warning': this.icon = "bi bi-exclamation-square-fill"
-      break;
-    }
+    this.messageService.message$.subscribe(res => {
+      this.message = res
+      switch(this.message?.severity){
+        case 'info': this.message.icon = "bi bi-info-circle-fill"
+        break;
+        case 'danger': this.message.icon = "bi bi-exclamation-square-fill"
+        break;
+        case 'success': this.message.icon = "bi bi-check-square-fill"
+        break;
+        case 'warning': this.message.icon = "bi bi-exclamation-square-fill"
+        break;
+      }
+    })
+
+
+    
   }
 }
