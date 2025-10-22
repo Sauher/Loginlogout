@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './passmod.component.scss'
 })
 export class PassmodComponent {
-
+save(){}
 }
