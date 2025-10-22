@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from "@angular/router";
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,8 @@ import { RouterLink, RouterModule } from "@angular/router";
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-
+ constructor(
+  private api: ApiService
+ ){}
   login(){}
 }

@@ -5,12 +5,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" *ngFor="let navItem of navItems">
           <li class="nav-item">
-            <a class="nav-link" href="#" routerLink="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" routerLink="/registration">Registration</a>
+            <a class="nav-link" href="#" routerLink={{navItem.url}}><i *ngIf='navItem.icon' class={{navItem.icon}}></i> {{navItem.name}}</a>
           </li>
         </ul>
       </div>

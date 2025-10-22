@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-passmod',
@@ -8,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './passmod.component.scss'
 })
 export class PassmodComponent {
+   constructor(
+    private api: ApiService
+   ){}
 save(){}
 }

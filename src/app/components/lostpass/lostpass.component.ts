@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-lostpass',
@@ -8,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './lostpass.component.scss'
 })
 export class LostpassComponent {
+   constructor(
+    private api: ApiService
+   ){}
 recoverpass(){}
 }

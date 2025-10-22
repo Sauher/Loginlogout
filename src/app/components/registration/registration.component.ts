@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-registration',
@@ -9,6 +10,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './registration.component.scss'
 })
 export class RegistrationComponent {
-
+ constructor(
+  private api: ApiService
+ ){}
   register(){}
 }
